@@ -18,6 +18,11 @@
     --foreground: #ededed;
   }
 }
+html,
+body,
+:root {
+  height: 100vh;
+}
 
 body {
   background: var(--background);
