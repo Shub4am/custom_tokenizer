@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Custom Tokenizer (Encode & Decode)
 
-## Getting Started
+A **TypeScript** tokenizer built from scratch that can:
+- Learn vocabulary from text
+- Encode text into token IDs
+- Decode token IDs back into text
+- Handle **special tokens** for flexibility
 
-First, run the development server:
+Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
 
+---
+
+## 🚀 Features
+- 📚 **Vocabulary Learning** – Dynamically generates a vocabulary from input text.
+- 🔄 **Encode & Decode** – Reliable bidirectional conversion between text and token IDs.
+- 🏷 **Special Tokens Support** – Handles tokens like `<PAD>`, `<UNK>`, `<START>`, `<END>`.
+- 🎯 **Lightweight & Easy to Use** – No external heavy NLP libraries.
+
+---
+## Project screenshot
+
+<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/2625f133-3074-42ca-9e03-4c64e27ace1e" />
+
+---
+
+## 🛠 Installation & Setup
 ```bash
+# Clone the repository
+git clone https://github.com/shub4am/custom_tokenizer.git
+cd custom-tokenizer
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit http://localhost:3000 to try it out.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+📌 Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+import { Tokenizer } from "@/utils/tokenizer";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+const tokenizer = new Tokenizer();
 
-## Deploy on Vercel
+// Learn vocab
+tokenizer.learnVocab("Hello world! Hello AI!");
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+// Encode text
+const tokens = tokenizer.encode("Hello world!");
+console.log(tokens); // [ 2, 3 ]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+// Decode tokens
+const text = tokenizer.decode(tokens);
+console.log(text); // "Hello world!"
