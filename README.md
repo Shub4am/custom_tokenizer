@@ -17,7 +17,13 @@ Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
 - 🎯 **Lightweight & Easy to Use** – No external heavy NLP libraries.
 
 ---
-## Project screenshot
+
+## 🎥 Project demo video
+
+https://github.com/user-attachments/assets/03ce3825-2392-4cb5-b264-7e4c636de2a6
+
+---
+## 📷 Project screenshot
 
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/2625f133-3074-42ca-9e03-4c64e27ace1e" />
 
